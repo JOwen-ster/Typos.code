@@ -1,0 +1,20 @@
+body {
+    background-color: darkblue;
+}
+
+h1 {
+    color: bisque;
+}
+
+p {
+    color: bisque;
+}
+
+ul{
+    color: bisque;
+}
+
+mark {
+    background-color: darkblue;
+    color: cyan;
+}
