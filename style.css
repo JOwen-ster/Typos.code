@@ -6,7 +6,7 @@ h1 {
     color: bisque;
     font-family: 'Courier New', monospace;
     text-align: center;
-    animation: myAnim 3s ease 1s 1 normal forwards;
+    animation: myAnim 3s ease 0.5s 1 normal forwards;
     transform: scale(0.5);
 }
 
@@ -15,7 +15,7 @@ h1 {
     white-space: nowrap;
     color : bisque;
     font-family: cursive;
-    animation: typing-animation 15s steps(500, end) 1; /* Adjust animation speed as needed */
+    animation: typing-animation 15s steps(500, end) 1; /*name, duration, steps, repititions*/
 }
 
 /* Keyframe animation */
@@ -34,7 +34,7 @@ h1 {
 	}
 
 	100% {
-		transform: scale(1);
+		transform: scale(1.2);
 	}
 }
 
@@ -52,4 +52,20 @@ ul{
 mark {
     background-color: #000220;
     color: cyan;
+}
+
+.copy-button {
+    background-color: #000220;
+    color: cyan;
+    border: 1px solid cyan;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+.copy-button:hover {
+    color: blue;
+    border: 1px solid blue;
+    cursor: pointer;
+    font-family: sans-serif;
 }

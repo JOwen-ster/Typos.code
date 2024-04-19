@@ -10,7 +10,18 @@
     <div class="typing-effect">Im a programmer not a web dev...</div>
     <p>Projects</p>
     <ul>
-        <li>Discord: <mark>typos.</mark> </li> 
+        <li>Project 1: <mark>Cipher Decrypter</mark> </li> 
     </ul>
 </body>
 </html>
+
+<button class="copy-button" onclick="myFunction()">Copy my discord!</button>
+<script>
+    function myFunction() {
+        // Copy the text inside the text field
+        navigator.clipboard.writeText('typos.');
+        document.querySelector('.copy-button').style.color = 'blue';
+        document.querySelector('.copy-button').style.border = 'blue';
+        document.querySelector('.copy-button').style.cursor = 'default';
+    }
+</script>
