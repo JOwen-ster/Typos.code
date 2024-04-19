@@ -6,6 +6,35 @@ h1 {
     color: bisque;
     font-family: 'Courier New', monospace;
     text-align: center;
+    animation: myAnim 3s ease 1s 1 normal forwards;
+}
+
+.typing-effect {
+    overflow: hidden; 
+    white-space: nowrap;
+    color : bisque;
+    font-family: cursive;
+    animation: typing-animation 15s steps(500, end) 1; /* Adjust animation speed as needed */
+}
+
+/* Keyframe animation */
+@keyframes typing-animation {
+    from {
+      width: 0; /* Start with no width */
+    }
+    to {
+      width: 100%; /* End with full width */
+    }
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale(0.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
 
 p {
