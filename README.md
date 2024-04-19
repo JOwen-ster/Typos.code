@@ -1,1 +1,9 @@
-https://jowen-ster.github.io/Typos.code/
+# Typos.code
+
+**__Ideas__**
+- Site homepage starts out as a fake no internet page or trying to connect to localhost (http://localhost:8000/)
+  - Site then turns into a black screen and then the opacity of the site comes into focus
+  - Some elements like buttons or pictures slides in from the sides.
+
+
+maybe write come code that finds all images on a page then downloads them
