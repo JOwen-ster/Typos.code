@@ -1,20 +1,25 @@
 body {
-    background-color: darkblue;
+    background-color: #000220;
 }
 
 h1 {
     color: bisque;
+    font-family: 'Courier New', monospace;
+    text-align: center;
 }
 
 p {
     color: bisque;
+    font-family: sans-serif;
+    
 }
 
 ul{
     color: bisque;
+    font-family: sans-serif;
 }
 
 mark {
-    background-color: darkblue;
+    background-color: #000220;
     color: cyan;
 }
