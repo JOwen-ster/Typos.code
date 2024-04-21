@@ -1,13 +1,43 @@
 body {
-    background-color: #000220;
+    background-color: #000000;
 }
 
 h1 {
     color: bisque;
     font-family: 'Courier New', monospace;
+    font-size: 40px;
     text-align: center;
-    animation: myAnim 3s ease 0.5s 1 normal forwards;
+    animation: enlarge 3s ease 0.3s 1 normal forwards;
     transform: scale(0.5);
+}
+
+p {
+    color: bisque;
+    font-family: cursive;
+}
+
+ul{
+    color: rgb(255, 228, 196);
+    font-family: cursive;
+}
+
+mark {
+    background-color: #000;
+    color: midnightblue;
+    font-family: cursive;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 300px;
+    background-color: #000000;
+    color: bisque;
+    border: 2px solid bisque;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 0px midnightblue;
 }
 
 .typing-effect {
@@ -18,7 +48,16 @@ h1 {
     animation: typing-animation 15s steps(500, end) 1; /*name, duration, steps, repititions*/
 }
 
-/* Keyframe animation */
+.typing-effect:hover {
+    color: midnightblue;
+    transition: color .3s ease;
+}
+
+.typing-effect:not(:hover) {
+    color: bisque;
+    transition: color .3s ease;
+}
+
 @keyframes typing-animation {
     from {
       width: 0; /* Start with no width */
@@ -28,44 +67,8 @@ h1 {
     }
 }
 
-@keyframes myAnim {
-	0% {
-		transform: scale(0.5);
-	}
-
+@keyframes enlarge {
 	100% {
-		transform: scale(1.2);
+		transform: scale(1.0);
 	}
-}
-
-p {
-    color: bisque;
-    font-family: sans-serif;
-    
-}
-
-ul{
-    color: rgb(255, 228, 196);
-    font-family: sans-serif;
-}
-
-mark {
-    background-color: #000220;
-    color: cyan;
-}
-
-.copy-button {
-    background-color: #000220;
-    color: cyan;
-    border: 1px solid cyan;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: sans-serif;
-}
-.copy-button:hover {
-    color: blue;
-    border: 1px solid blue;
-    cursor: pointer;
-    font-family: sans-serif;
 }
