@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background: radial-gradient(circle, rgba(221,255,255,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 h1 {
@@ -21,9 +21,21 @@ ul{
     font-family: cursive;
 }
 
-mark {
-    background-color: #000;
+li {
+    display: inline-block;
+    color: bisque;
+    transition: color .5s ease;
+}
+
+li:hover{
     color: midnightblue;
+    transition: color .5s ease;
+}
+
+mark {
+    background: transparent;
+    color: midnightblue;
+    text-decoration: overline;
     font-family: cursive;
 }
 
@@ -33,37 +45,50 @@ mark {
     align-items: center;
     height: 200px;
     width: 300px;
-    background-color: #000000;
+    background: transparent;
     color: bisque;
-    border: 2px solid bisque;
     border-radius: 20px;
     box-shadow: 0px 0px 50px 0px midnightblue;
+    margin-left: 45px
 }
 
-.typing-effect {
-    overflow: hidden; 
+
+.typing {
+    transition: color .5s ease;
+    width: 260px; /*how wide the affected element will be*/
+    color:bisque; /*the color of the text*/
+    
+    animation:
+    /*name of animation, length of animation, increment*/
+    typing 2s steps(32),
+    
+    /*name of animation,
+    length of animation,
+    timing when animation happens,
+    delay before animation starts*/
+    cursor 1s step-end infinite;
+    
     white-space: nowrap;
-    color : bisque;
+    overflow: hidden;
+    border-right: 3px solid;
     font-family: cursive;
-    animation: typing-animation 15s steps(500, end) 1; /*name, duration, steps, repititions*/
+    
 }
 
-.typing-effect:hover {
+.typing:hover {
     color: midnightblue;
-    transition: color .3s ease;
+    transition: color .5s ease;
 }
 
-.typing-effect:not(:hover) {
-    color: bisque;
-    transition: color .3s ease;
-}
-
-@keyframes typing-animation {
+@keyframes typing {
     from {
-      width: 0; /* Start with no width */
+        width: 0;
     }
-    to {
-      width: 100%; /* End with full width */
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
     }
 }
 
@@ -71,4 +96,77 @@ mark {
 	100% {
 		transform: scale(1.0);
 	}
+}
+
+.container {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 1em;
+	width: 800px;
+	height: 500px;
+	transition: all 400ms;
+    margin-left: 900px;
+    margin-top: -300px;
+}
+
+.container:hover .box {
+	filter: grayscale(100%) blur(10px);
+}
+
+.box {
+	position: relative;
+	background: var(--img) center center;
+	background-size: cover;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box-2:hover {
+    background-image: url(https://i.pinimg.com/originals/2a/e4/80/2ae480f827920b1fcb1caeb22b95f180.gif);
+}
+
+.container .box:hover {
+	filter: grayscale(0%);
+}
+
+.container:has(.box-1:hover) {
+	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+	grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.box::after {
+	content: attr(data-text);
+	position: absolute;
+	bottom: 20px;
+	background: transparent;
+	color: #fff;
+	padding: 10px 10px 10px 15px;
+	letter-spacing: 4px;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.box:hover::after {
+	transform: translateY(0);
+	opacity: 1;
+	transition-delay: 400ms;
 }
