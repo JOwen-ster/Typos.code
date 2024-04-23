@@ -26,11 +26,6 @@ li {
     color: midnightblue;
 }
 
-li:hover{
-    color: purple;
-    transition: color 1s ease;
-}
-
 li:not(:hover){
     color: midnightblue;
     transition: color 1s ease;
@@ -51,11 +46,17 @@ mark {
     width: 300px;
     background: transparent;
     color: midnightblue;
+    transition: opacity .5s ease;
     border-radius: 20px;
     box-shadow: 0px 0px 50px 0px midnightblue;
-    margin-left: 45px
+    margin-left: 45px;
+    opacity: 0%;
 }
 
+.flex-container:hover {
+    opacity: 100%;
+    transition: opacity .75s ease;
+}
 
 .typing {
     transition: color .5s ease;
@@ -106,7 +107,7 @@ mark {
 	height: 700px;
 	transition: all 400ms;
     margin-left: 525px;
-    margin-top: -300px;
+    margin-top: -575px;
     background: transparent
 }
 
@@ -124,48 +125,28 @@ mark {
 	align-items: center;
 }
 
-/* .box-1:hover {
-    background: white;
-}
-
-.box-2:hover {
-    background: white;
-}
-
-.box-3:hover {
-    background: white;
-}
-
-.box-4:hover {
-    background: white;
-}
-
-.box-5:hover {
-    background: white;
-} */
-
 .container .box:hover {
 	filter: grayscale(0);
 }
 
 .container:has(.box-1:hover) {
-	grid-template-rows: 3fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
 }
 
 .container:has(.box-2:hover) {
-	grid-template-rows: 1fr 3fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 4fr 1fr 1fr 1fr;
 }
 
 .container:has(.box-3:hover) {
-	grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 4fr 1fr 1fr;
 }
 
 .container:has(.box-4:hover) {
-	grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 4fr 1fr;
 }
 
 .container:has(.box-5:hover) {
-	grid-template-rows: 1fr 1fr 1fr 1fr 3fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 4fr;
 }
 
 .box::after {
