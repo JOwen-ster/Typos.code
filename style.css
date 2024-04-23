@@ -1,9 +1,9 @@
 body {
-    background: radial-gradient(circle, rgba(221,255,255,1) 0%, rgba(148,187,233,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(156,185,214,1) 100%);
 }
 
 h1 {
-    color: bisque;
+    color: midnightblue;
     font-family: 'Courier New', monospace;
     font-size: 40px;
     text-align: center;
@@ -12,7 +12,7 @@ h1 {
 }
 
 p {
-    color: bisque;
+    color: midnightblue;
     font-family: cursive;
 }
 
@@ -23,13 +23,17 @@ ul{
 
 li {
     display: inline-block;
-    color: bisque;
-    transition: color .5s ease;
+    color: midnightblue;
 }
 
 li:hover{
+    color: purple;
+    transition: color 1s ease;
+}
+
+li:not(:hover){
     color: midnightblue;
-    transition: color .5s ease;
+    transition: color 1s ease;
 }
 
 mark {
@@ -46,7 +50,7 @@ mark {
     height: 200px;
     width: 300px;
     background: transparent;
-    color: bisque;
+    color: midnightblue;
     border-radius: 20px;
     box-shadow: 0px 0px 50px 0px midnightblue;
     margin-left: 45px
@@ -56,7 +60,7 @@ mark {
 .typing {
     transition: color .5s ease;
     width: 260px; /*how wide the affected element will be*/
-    color:bisque; /*the color of the text*/
+    color:midnightblue; /*the color of the text*/
     
     animation:
     /*name of animation, length of animation, increment*/
@@ -73,11 +77,6 @@ mark {
     border-right: 3px solid;
     font-family: cursive;
     
-}
-
-.typing:hover {
-    color: midnightblue;
-    transition: color .5s ease;
 }
 
 @keyframes typing {
@@ -101,68 +100,85 @@ mark {
 .container {
 	position: relative;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	gap: 1em;
-	width: 800px;
-	height: 500px;
+	width: 700px;
+	height: 700px;
 	transition: all 400ms;
-    margin-left: 900px;
+    margin-left: 525px;
     margin-top: -300px;
+    background: transparent
 }
 
 .container:hover .box {
-	filter: grayscale(100%) blur(10px);
+	filter: grayscale(100%) blur(5px);
 }
 
 .box {
+    display: flex;
 	position: relative;
 	background: var(--img) center center;
 	background-size: cover;
 	transition: all 400ms;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.box-2:hover {
-    background-image: url(https://i.pinimg.com/originals/2a/e4/80/2ae480f827920b1fcb1caeb22b95f180.gif);
+/* .box-1:hover {
+    background: white;
 }
 
+.box-2:hover {
+    background: white;
+}
+
+.box-3:hover {
+    background: white;
+}
+
+.box-4:hover {
+    background: white;
+}
+
+.box-5:hover {
+    background: white;
+} */
+
 .container .box:hover {
-	filter: grayscale(0%);
+	filter: grayscale(0);
 }
 
 .container:has(.box-1:hover) {
-	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 3fr 1fr 1fr 1fr 1fr;
 }
 
 .container:has(.box-2:hover) {
-	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 3fr 1fr 1fr 1fr;
 }
 
 .container:has(.box-3:hover) {
-	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
 }
 
 .container:has(.box-4:hover) {
-	grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
 }
 
 .container:has(.box-5:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 3fr;
 }
 
 .box::after {
 	content: attr(data-text);
-	position: absolute;
+	position: relative;
 	bottom: 20px;
-	background: transparent;
 	color: #fff;
+    background: transparent;
 	padding: 10px 10px 10px 15px;
 	letter-spacing: 4px;
-	transform: translateY(60px);
-	opacity: 0;
+	transform: translateY(10px);
 	transition: all 400ms;
+    opacity: 0;
 }
 
 .box:hover::after {
