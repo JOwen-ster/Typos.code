@@ -1,83 +1,39 @@
-body {
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(156,185,214,1) 100%);
+:root {
+    background: radial-gradient(circle, rgba(0,0,48,1) 0%, rgba(35,0,68,1) 100%);
 }
 
-h1 {
-    color: midnightblue;
+.title {
+    color: #D90166;
     font-family: 'Courier New', monospace;
-    font-size: 40px;
+    font-size: 75px;
     text-align: center;
-    animation: enlarge 3s ease 0.3s 1 normal forwards;
-    transform: scale(0.5);
-}
-
-p {
-    color: midnightblue;
-    font-family: cursive;
-}
-
-ul{
-    color: rgb(255, 228, 196);
-    font-family: cursive;
-}
-
-li {
-    display: inline-block;
-    color: midnightblue;
-}
-
-li:not(:hover){
-    color: midnightblue;
-    transition: color 1s ease;
-}
-
-mark {
-    background: transparent;
-    color: midnightblue;
-    text-decoration: overline;
-    font-family: cursive;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 300px;
-    background: transparent;
-    color: midnightblue;
-    transition: opacity .5s ease;
-    border-radius: 20px;
-    box-shadow: 0px 0px 50px 0px midnightblue;
-    margin-left: 45px;
-    opacity: 0%;
-}
-
-.flex-container:hover {
-    opacity: 100%;
-    transition: opacity .75s ease;
 }
 
 .typing {
-    transition: color .5s ease;
-    width: 260px; /*how wide the affected element will be*/
-    color:midnightblue; /*the color of the text*/
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 250px; /*how wide the affected element will be*/
+    color:white; /*the color of the text*/
     
     animation:
     /*name of animation, length of animation, increment*/
-    typing 2s steps(32),
+    typing 4s steps(32),
     
     /*name of animation,
     length of animation,
     timing when animation happens,
-    delay before animation starts*/
+    how many times*/
     cursor 1s step-end infinite;
     
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    font-family: cursive;
-    
+    border-left: 0px transparent;
+    font-family: 'Georgia', serif;
+    font-size: 1em;
 }
 
 @keyframes typing {
@@ -92,26 +48,22 @@ mark {
     }
 }
 
-@keyframes enlarge {
-	100% {
-		transform: scale(1.0);
-	}
-}
-
-.container {
-	position: relative;
+/* TO CENTER A DIV USE POSITION: absolute, top: 50%, left: 50%, transform: translate(-50%, -50%)*/
+.img-grid {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	gap: 1em;
-	width: 700px;
-	height: 700px;
+	width: 50%;
+	height: 75%;
 	transition: all 400ms;
-    margin-left: 525px;
-    margin-top: -575px;
-    background: transparent
+    position: absolute;
+    left: 50%;
+    top: 300%;
+    transform: translate(-50%); /* Move the div back by half its size */
+    background: transparent;
 }
 
-.container:hover .box {
+.img-grid:hover .box {
 	filter: grayscale(100%) blur(5px);
 }
 
@@ -122,30 +74,31 @@ mark {
 	background-size: cover;
 	transition: all 400ms;
 	justify-content: center;
+    border-radius: px;
 	align-items: center;
 }
 
-.container .box:hover {
+.img-grid .box:hover {
 	filter: grayscale(0);
 }
 
-.container:has(.box-1:hover) {
+.img-grid:has(.box-1:hover) {
 	grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
 }
 
-.container:has(.box-2:hover) {
+.img-grid:has(.box-2:hover) {
 	grid-template-rows: 1fr 4fr 1fr 1fr 1fr;
 }
 
-.container:has(.box-3:hover) {
+.img-grid:has(.box-3:hover) {
 	grid-template-rows: 1fr 1fr 4fr 1fr 1fr;
 }
 
-.container:has(.box-4:hover) {
+.img-grid:has(.box-4:hover) {
 	grid-template-rows: 1fr 1fr 1fr 4fr 1fr;
 }
 
-.container:has(.box-5:hover) {
+.img-grid:has(.box-5:hover) {
 	grid-template-rows: 1fr 1fr 1fr 1fr 4fr;
 }
 
@@ -166,4 +119,31 @@ mark {
 	transform: translateY(0);
 	opacity: 1;
 	transition-delay: 400ms;
+}
+
+.about {
+    margin-left: 500px;
+    color: #00e1ff;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2;
+
+    gap: 10px;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.parent > div {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 300px;
+    height: 200px;
+    background: transparent;
+    color: white;
+    border-radius: 50px;
+    box-shadow: -15px 15px 40px 5px black;
+    padding: 20px;
 }
