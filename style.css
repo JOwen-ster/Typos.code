@@ -1,5 +1,10 @@
 :root {
-    background: radial-gradient(circle, rgba(0,0,48,1) 0%, rgba(35,0,68,1) 100%);
+    background: #000030;
+}
+
+div {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .title {
@@ -62,13 +67,7 @@
     transform: translate(-50%); /* Move the div back by half its size */
     background: transparent;
 }
-.left {
-    margin-left: 10%;
-}
-.right {
-    justify-self: end;
-    margin-right: 10%
-}
+
 .img-grid:hover .box {
 	filter: grayscale(100%) blur(5px);
 }
@@ -132,22 +131,39 @@
     color: #00e1ff;
 }
 
+.left {
+    margin-left: 26%;
+    text-align: center;
+}
+
+.right {
+    justify-self: end;
+    margin-right: 26%;
+    text-align: center;
+}
+
 .parent {
     display: grid;
-    grid-template-columns: 2fr;
-    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
     padding: 10px;
 }
 
 .parent > div {
     display: grid;
-    grid-template-rows: 1fr;
     width: 300px;
     height: 200px;
-    background: transparent;
-    color: white;
+    color: transparent;
+    background-color: transparent;
+    transition: color 1s;
     border-radius: 50px;
-    box-shadow: -15px 15px 40px 5px black;
+    box-shadow: -10px 10px 20px 2px #D90166;
     padding: 20px;
 }
+
+.parent > div:hover{
+    color: bisque;
+    transition: color 1s;
+}
+
