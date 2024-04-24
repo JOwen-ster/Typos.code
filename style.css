@@ -31,7 +31,7 @@
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    border-left: 0px transparent;
+    border-left: 0 transparent;
     font-family: 'Georgia', serif;
     font-size: 1em;
 }
@@ -62,7 +62,13 @@
     transform: translate(-50%); /* Move the div back by half its size */
     background: transparent;
 }
-
+.left {
+    margin-left: 10%;
+}
+.right {
+    justify-self: end;
+    margin-right: 10%
+}
 .img-grid:hover .box {
 	filter: grayscale(100%) blur(5px);
 }
@@ -74,7 +80,7 @@
 	background-size: cover;
 	transition: all 400ms;
 	justify-content: center;
-    border-radius: px;
+    border-radius: 1px;
 	align-items: center;
 }
 
@@ -128,11 +134,9 @@
 
 .parent {
     display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 2;
-
+    grid-template-columns: 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
     gap: 10px;
-    background-color: transparent;
     padding: 10px;
 }
 
