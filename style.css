@@ -67,9 +67,10 @@ li {
 	transition: all .5s;
     position: absolute;
     left: 50%;
-    top: 135%;
+    top: 195%;
     transform: translate(-50%); /* Move the div back by half its size */
     background: transparent;
+    padding-bottom: 50px;
 }
 
 .img-grid:hover .box {
