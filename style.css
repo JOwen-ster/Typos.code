@@ -58,6 +58,7 @@ li {
 }
 
 /* TO CENTER A DIV USE POSITION: absolute, top: 50%, left: 50%, transform: translate(-50%, -50%)*/
+/* Absolute ignores order*/
 .img-grid {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -79,7 +80,6 @@ li {
 
 .box {
     display: flex;
-	position: relative;
 	background: var(--img) center center;
 	background-size: cover;
 	transition: all .5s;
@@ -114,11 +114,9 @@ li {
 
 .box::after {
 	content: attr(data-text);
-	position: relative;
 	bottom: 20px;
 	color: #fff;
     background: transparent;
-	padding: 10px 10px 10px 15px;
 	letter-spacing: 4px;
 	transform: translateY(10px);
 	transition: all .5s;
